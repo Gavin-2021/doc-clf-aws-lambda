@@ -18,7 +18,7 @@ Original data set
 ## doc_clf_best_estimator.pkl
 The ligher version of model file which is being used on AWS
 
-Web url: https://4iia82hd7a.execute-api.us-west-1.amazonaws.com/dev
+Web URL: https://4iia82hd7a.execute-api.us-west-1.amazonaws.com/dev
 
 
 # Delopyment steps:
