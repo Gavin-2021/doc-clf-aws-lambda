@@ -1,2 +1,6 @@
 # doc-clf-aws-lambda
-Built a document classifier and deploy to AWS using lambda function
+This repo contains the full code and toy data to train a document classifier and templates needed to create a serverless web service using AWS lambda functions.
+
+
+
+Web url: https://4iia82hd7a.execute-api.us-west-1.amazonaws.com/dev
