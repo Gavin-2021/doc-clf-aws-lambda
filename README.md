@@ -25,9 +25,9 @@ Web url: https://4iia82hd7a.execute-api.us-west-1.amazonaws.com/dev
 
 1. Create conda virsual env and install required packages
 2. Create serverless template files
-'''sh
+```sh
 sls create --template aws-python3 --name doc-clf
-'''
+```
 3. Build model pipeline - handler.py
 4. Config serverless.yml
 5. Invoke lambda function locally and test the function using event.json file
