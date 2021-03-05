@@ -1,0 +1,58 @@
+
+
+service: serverles-doc-clf
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: us-west-1
+  
+  deploymentBucket:
+    name: doc-clf-ml
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:GetObject"
+      Resource:
+        - "arn:aws:s3:::doc-clf-ml/*"
+
+  apiGateway:
+    shouldStartNameWithService: true
+  
+
+
+package:
+  exclude:
+    - node_modules/**
+    - .ipynb_checkpoints
+    - .vscode/**
+    - .npmignore
+    - (*).ipynb
+    - (*).csv
+    - (*).pkl
+
+functions:
+  doc-clf:
+    handler: handler.predict
+    timeout: 29
+    events:
+      - http:
+          path: get-doc-clf
+          method: get
+          request:
+            parameters:
+              querystrings:
+                hashCode: true
+
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    slim: true
