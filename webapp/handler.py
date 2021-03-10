@@ -19,7 +19,7 @@ def get_model():
 def predict(event, context):
     
     body = {
-        "message": "Document Clasification"
+        "message": "Document Classification"
     }
 
     params = event['queryStringParameters']
